@@ -1,22 +1,18 @@
-import { Routes, Route, Navigate, Outlet } from 'react-router';
-import Login from '../pages/login';
-import Polls from '../pages/polls';
+import { Routes, Route, Link } from 'react-router';
+import FeedbackForm from '../pages/feedbackForm';
+import FeedbackList from '../pages/feedbackList';
+import Header from '../pages/header';
 
+// Layout
 const Router = () => {
-
-    const AuthRoutes = () => {
-        // get localstorage data to check if user is logged in or not
-        const userId = localStorage.getItem('userId');
-        return userId !== null ? <Outlet /> : <Navigate to={'/'} />;
-    };
-
     return (
-        <Routes>
-            <Route path='/' element={<Login />} />
-            <Route exact element={<AuthRoutes />}>
-                <Route path='/polls' element={<Polls />} />
-            </Route>
-        </Routes>
+        <div>
+            <Header />
+            <Routes >
+                <Route path="/" element={<FeedbackForm />} />
+                <Route path="/feedbacks" element={<FeedbackList />} />
+            </Routes>
+        </div>
     );
 };
 

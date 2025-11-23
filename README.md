@@ -1,12 +1,11 @@
-# Polling App
-A simple polling app where users can register/login, vote on polls, and see live results.
+# Feedback App
+A simple app where users can add their feedback.
 
 ---
 
 ## 🛠 Features
-- User registration/login
-- Vote on polls (one vote per user)
-- See results by percent and bar
+- Add feedback (name, email, feedbacl)
+- View all feedbacks
 - Responsive frontend using React and Tailwind CSS
 - Backend using Node.js, Express, and local MongoDB compass
 
@@ -14,18 +13,18 @@ A simple polling app where users can register/login, vote on polls, and see live
 
 ## 💻 Folder Structure
 ```text
-VOTEPOLL PRT/
+PRT/
 │
 ├─ server/
-│  ├─ models/       # Models (users.js, polls.js)
-│  ├─ routes/       # API routes (users.js, polls.js)
-│  ├─ index.js      # Express server running at :8000
+│  ├─ models/       # Models (feedback.js)
+│  ├─ controllers/  # API routes (feedback.js)
+│  ├─ index.js      # Express server running at:8000
 │  └─ package.json
 │
 ├─ client/          # Client running at :5173
 │  ├─ src/
 │  │  ├─ config/    # Routes (router.jsx)
-│  │  ├─ pages/     # Pages (login.jsx, polls.jsx)
+│  │  ├─ pages/     # Pages (header.jsx, feedbackForm.jsx, feedbackList.jsx)
 │  │  └─ main.jsx
 │  └─ package.json
 ```
@@ -51,7 +50,7 @@ The server will run on http://localhost:8000
 
 
 ### Frontend
-2. Go to client folder:
+2. Go to vite client folder:
 ```bash
 cd client
 npm install
@@ -61,13 +60,12 @@ The server will run on http://localhost:5173
 
 
 ### Screenshots
-### Login Page
-![Login Page](screenshots/ss1.png)
+### Form Page
+![Form](screenshots/ss1.png)
+![Success form](screenshots/ss3.png)
 
-### Polls Page
-![Polls Page-1](screenshots/ss2.png)
-![Polls Page-2](screenshots/ss3.png)
-![Polls Page-3](screenshots/ss4.png)
+### Feedbacks Page
+![Feedback list](screenshots/ss2.png)
 
 
 

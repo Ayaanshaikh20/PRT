@@ -8,11 +8,9 @@ const dbConnect = require('./config/db');
 app.use(cors());
 app.use(express.json());
 
-app.use(require("./controllers/polls"));
-app.use(require("./controllers/users"));
-
-dbConnect();
+app.use(require("./controllers/feedback"));
 
 app.listen(PORT, () => {
+    dbConnect();
     console.log(`Server is running on port ${PORT}`);
 });
