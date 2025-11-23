@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Feedback = require('../models/feedback');
 
-// POST /api/feedback - create one feedback
+// POST /api/feedback
 router.post('/api/feedback', async (req, res) => {
     try {
         const { name, email, message } = req.body;
@@ -14,19 +14,17 @@ router.post('/api/feedback', async (req, res) => {
         await fb.save();
         return res.status(201).json({ message: 'Feedback saved successfully' });
     } catch (err) {
-        console.error(err);
-        return res.status(500).json({ error: 'Server error' });
+        return res.status(500).json({ message: 'Server error' });
     }
 });
 
-// GET /api/feedback - get all feedbacks
+// GET /api/feedback
 router.get('/api/feedback', async (req, res) => {
     try {
-        const all = await Feedback.find().sort({ createdAt: -1 }).select('name email message createdAt -_id');
-        return res.json(all);
+        const allFeedbacks = await Feedback.find().sort({ createdAt: -1 }).select('name email message createdAt -_id');
+        return res.status(200).json(allFeedbacks);
     } catch (err) {
-        console.error(err);
-        return res.status(500).json({ error: 'Server error' });
+        return res.status(500).json({ message: 'Server error' });
     }
 });
 

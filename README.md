@@ -1,10 +1,10 @@
 # Feedback App
-A simple app where users can add their feedback.
+A simple app where users can add and view all feedbacks.
 
 ---
 
 ## 🛠 Features
-- Add feedback (name, email, feedbacl)
+- Add feedback (name, email, feedback)
 - View all feedbacks
 - Responsive frontend using React and Tailwind CSS
 - Backend using Node.js, Express, and local MongoDB compass
@@ -42,9 +42,9 @@ PRT/
 ```bash
 cd server
 npm install
-MONGO_URI=<your_mongo_connection_string>
+MONGO_URI_LOCAL=mongodb://127.0.0.1:27017/feedbackdb
 PORT=8000
-nodemon or node server.js
+nodemon or npm run start
 ```
 The server will run on http://localhost:8000
 
@@ -56,7 +56,7 @@ cd client
 npm install
 npm run dev
 ```
-The server will run on http://localhost:5173
+The client will run on http://localhost:5173
 
 
 ### Screenshots
